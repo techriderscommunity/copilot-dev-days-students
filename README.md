@@ -1,48 +1,86 @@
-# Materiales — Dev Days Students Madrid 2026
+# Dev Days Students Madrid 2026 — Materiales
 
-Repositorio para compartir los materiales de las charlas y talleres de [Dev Days Students Madrid 2026](https://githubcopilotdevdaysmadrid.techriders.es/).
+Presentaciones y repositorios de las charlas y talleres de **Dev Days Students Madrid 2026**.
 
-Ponentes: podéis añadir aquí el código o repositorio de vuestra sesión y las diapositivas. Así, las personas asistentes podrán consultarlos después del evento.
+[Web del evento](https://githubcopilotdevdaysmadrid.techriders.es/)
 
-## Cómo aportar materiales
+## Índice de materiales
 
-1. Crea una carpeta en `materiales/` con un nombre corto y descriptivo, por ejemplo `materiales/agentes-con-github-copilot/`.
-2. Añade dentro un `README.md` con el título de la sesión, los nombres de las personas ponentes y una breve descripción.
-3. Incluye los materiales:
-   - Presentación en PDF y, si quieres, también en PowerPoint (`.pptx`).
-   - Enlace al repositorio de código, o el código en una subcarpeta `codigo/`.
-4. Abre un *pull request* con los cambios. Si no tienes permisos para contribuir directamente, crea un *fork* y abre el *pull request* desde allí.
+Entrad en el enlace de vuestra sesión para consultar o añadir sus materiales. Las siete carpetas ya están preparadas; las presentaciones y los repositorios están pendientes de aportación por parte de los ponentes.
 
-Estructura sugerida:
+### Sesiones
+
+- [Arantxa Delgado Ruiz — GitHub te representa: cómo mostrar lo que sabes hacer](<./Arantxa Delgado Ruiz - GitHub te representa - cómo mostrar lo que sabes hacer/>)
+- [Manuel Fernandez — De prompts a contexto: cómo conseguir que los agentes de IA programen mejor sin quemar tokens](<./Manuel Fernandez - De prompts a contexto - cómo conseguir que los agentes de IA programen mejor sin quemar tokens/>)
+- [Máximo Fernández Núñez — Agentes: cuando el LLM no es lo importante](<./Máximo Fernández Núñez - Agentes - cuando el LLM no es lo importante/>)
+- [Antonio Leiva — Lo que Copilot no sabe hacer (todavía): MCP explicado con demos](<./Antonio Leiva - Lo que Copilot no sabe hacer (todavía) - MCP explicado con demos/>)
+- [Raúl Antón y Mariano de la Fuente — Tu primer día como desarrollador… y tu compañero es GitHub Copilot](<./Raúl Antón y Mariano de la Fuente - Tu primer día como desarrollador y tu compañero es GitHub Copilot/>)
+
+### Workshops
+
+- [Rodrigo Liberoff y Borja Piris de Castro — Squad: Equipos de Agentes IA para Cualquier Proyecto con GitHub Copilot](<./Rodrigo Liberoff y Borja Piris de Castro - Squad - Equipos de Agentes IA para Cualquier Proyecto con GitHub Copilot/>)
+- [Dachi Gogotchuri — Developer-centered AI engineering: build software with security, quality and governance](<./Dachi Gogotchuri - Developer-centered AI engineering - build software with security, quality and governance/>)
+
+## Ponentes: subid los materiales a vuestra carpeta
+
+No tenéis que crear carpetas ni copiar plantillas: **buscad vuestra sesión en el índice y utilizad la carpeta que ya está preparada**.
+
+Cada carpeta sigue el formato `Nombre del ponente - Sesión` y contiene un `README.md` con los datos de la charla o el taller. Algunos signos de puntuación de los títulos se han sustituido u omitido en los nombres de carpeta para que sean compatibles con Windows.
+
+1. Añadid vuestra presentación a esa carpeta, preferiblemente como `presentacion.pptx`. Podéis incluir también `presentacion.pdf`.
+2. Contadnos en el `README.md` de vuestra sesión un breve resumen: en 2–3 frases, explicad de qué trata y qué se llevará quien consulte los materiales. Sustituid también los campos pendientes por el enlace a la presentación y la URL pública del repositorio con el código o las demos.
+3. Enviad los cambios mediante un pull request siguiendo las instrucciones de abajo.
+
+El resultado será:
 
 ```text
-materiales/
-└── nombre-corto-de-la-sesion/
-    ├── README.md
-    ├── presentacion.pdf
-    ├── presentacion.pptx
-    └── codigo/                 # Opcional: código fuente de la sesión
+Nombre del ponente - Sesión/
+├── README.md          # Datos de la sesión y enlaces a los materiales
+├── presentacion.pptx  # Presentación aportada por el ponente
+└── presentacion.pdf   # Opcional
 ```
 
-Si el código ya está publicado en otro repositorio, basta con añadir su URL en el `README.md` de la sesión; no hace falta copiarlo aquí. Si lo incluyes, sube los archivos del proyecto, no una carpeta `.git` anidada.
+**El repositorio de código se queda en vuestra cuenta.** Aquí solo tenéis que enlazarlo; no hace falta copiarlo ni transferirlo a la organización. Si la presentación es demasiado grande para subirla a GitHub, añadid un enlace público de descarga en el `README.md` de la sesión.
 
-## Plantilla para la sesión
+## Cómo enviar los cambios
 
-Puedes copiar esta plantilla en `materiales/nombre-corto-de-la-sesion/README.md`:
+### Si tenéis permisos de escritura
 
-```markdown
-# Título de la sesión
+Clonad este repositorio y cread una rama para vuestra aportación:
 
-- **Ponente(s):** Nombre y apellidos
-- **Repositorio:** URL del repositorio o ruta a `codigo/`
-- **Presentación:** `presentacion.pdf` (y/o `presentacion.pptx`)
-
-Breve descripción de la sesión y de los materiales.
+```bash
+git clone https://github.com/techriderscommunity/copilot-dev-days-students.git
+cd copilot-dev-days-students
+git switch -c materiales-mi-sesion
 ```
 
-## Antes de enviar el *pull request*
+Añadid la presentación y editad el `README.md` dentro de vuestra carpeta. Después, guardad y subid los cambios, sustituyendo el nombre de carpeta del ejemplo por el vuestro:
 
-- Comprueba que los enlaces y archivos se pueden abrir.
-- No subas credenciales, tokens, datos personales ni información confidencial.
-- Comparte únicamente materiales que tengas permiso para publicar.
-- Para archivos grandes, añade un enlace de descarga en lugar de subirlos al repositorio.
+```bash
+git add -- "Nombre del ponente - Sesión"
+git commit -m "docs: añadir materiales de mi sesión"
+git push -u origin materiales-mi-sesion
+```
+
+En GitHub, abrid un **pull request hacia `main`** con el título `Materiales: Nombre del ponente - Sesión`. La organización revisará e incorporará la aportación.
+
+### Si no tenéis permisos de escritura
+
+Podéis clonar un repositorio público, pero **para subir cambios directamente necesitáis permisos de escritura**.
+
+Si no los tenéis:
+
+1. Haced **Fork** de [este repositorio del evento](https://github.com/techriderscommunity/copilot-dev-days-students) en vuestra cuenta.
+2. Clonad vuestro fork en lugar del repositorio de la organización.
+3. Seguid los mismos pasos de arriba: rama, materiales en vuestra carpeta, commit y push.
+4. Desde vuestro fork, pulsad **Contribute → Open pull request**, con destino `techriderscommunity/copilot-dev-days-students`, rama `main`.
+
+El fork es del repositorio del evento, no del repositorio de vuestra demo. No hace falta que la organización os añada como colaboradores para enviar un pull request desde un fork.
+
+## Antes de enviarlo
+
+- Comprobad que la presentación abre y que los enlaces son accesibles sin solicitar permisos.
+- Sustituid los campos pendientes del `README.md` de vuestra sesión.
+- Compartid únicamente materiales que tengáis permiso para publicar.
+- No subáis credenciales, tokens, datos personales ni información confidencial.
+- No incluyáis dependencias, binarios de compilación ni copias completas de otros repositorios.
